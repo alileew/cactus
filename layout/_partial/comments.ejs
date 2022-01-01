@@ -1,14 +1,52 @@
 <% if(page.comments && theme.disqus.enabled){ %>
-    <div class="blog-post-comments">
-        <div id="disqus_thread">
-            <noscript><%= __('comments.no_js') %></noscript>
-        </div>
-    </div>
+<div class="blog-post-comments">
+  <div id="disqus_thread">
+    <noscript><%= __('comments.no_js') %></noscript>
+  </div>
+</div>
+<% } %> <% if(page.comments && theme.utterances.enabled){ %>
+<div class="blog-post-comments">
+  <div id="utterances_thread">
+    <noscript><%= __('comments.no_js') %></noscript>
+  </div>
+</div>
 <% } %>
-<% if(page.comments && theme.utterances.enabled){ %>
-    <div class="blog-post-comments">
-        <div id="utterances_thread">
-            <noscript><%= __('comments.no_js') %></noscript>
-        </div>
-    </div>
+<!-- 下面添加 Gitalk 部分 -->
+<% if(page.comments && theme.gitalk.enabled){ %>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<div id="gitalk-container"></div>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: "<%= theme.gitalk.clientID %>",
+    clientSecret: "<%= theme.gitalk.clientSecret %>",
+    id: md5(window.location.pathname),
+    repo: "<%= theme.gitalk.repo %>",
+    owner: "<%= theme.gitalk.owner %>",
+    admin: "<%= theme.gitalk.admin %>",
+    distractionFreeMode: "<%= theme.gitalk.on %>",
+  });
+  gitalk.render("gitalk-container");
+</script>
+<% } %>
+
+<!-- valine Comments -->
+<% if (theme.valine.enabled && theme.valine.appId && theme.valine.appKey){ %>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<!-- <script src="https://cdn.fayne.cn/js/Valine.min.js"></script> -->
+<div id="vcomments" style="margin-top: 30px"></div>
+<script type="text/javascript">
+  new Valine({
+    el: "#vcomments",
+    appId: "<%= theme.valine.appId %>",
+    appKey: "<%= theme.valine.appKey %>",
+    avatar: "<%= theme.valine.avatar %>",
+    placeholder: "<%= theme.valine.placeholder %>",
+    pageSize: 10,
+  });
+</script>
 <% } %>

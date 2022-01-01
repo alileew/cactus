@@ -14,10 +14,13 @@ direction: ltr
 # navigation menu. Optionally, you can add translations for the 'Key' in
 # languages/*.yml
 nav:
-  home: /
-  about: /about/
-  articles: /archives/
-  projects: projects_url
+  Home: /
+  Archives: /archives/
+  # Projects: projects/
+  Projects: https://github.com/alileew
+  Tags: tags/
+  About: about/
+  Search: /search/
 
 
 # Links to your social media accounts.
@@ -25,15 +28,15 @@ nav:
 # (see https://fontawesome.com/icons?d=gallery&s=brands);
 # only 'mail' is an exception.
 social_links:
-  github: http://github.com/probberechts/cactus-dark
-  twitter: /
-  facebook: /
-  linkedin: /
-  mail: mailto:name@email.com
+  github: https://github.com/alileew
+  # twitter: /
+  # facebook: /
+  # linkedin: /
+  mail: mailto:alileew.me@gmail.com
 
 # Customize the overview with displaying a tagcloud on the index page.
 # Options: https://hexo.io/docs/helpers.html#tagcloud
-tags_overview: false
+tags_overview: false # 在首页是否开启标签云
 
 # Customize the overview with the most recent blog posts on the index page.
 # Options:
@@ -42,7 +45,7 @@ tags_overview: false
 #   - sort_updated: sort posts by last modification date instead of creation date.
 posts_overview:
   show_all_posts: false
-  post_count: 5
+  post_count: 10
   sort_updated: false
 
 # Customize the archive view.
@@ -62,7 +65,7 @@ post:
 # Customize the copyright years
 # Note: if start_year/end_year not provided, will use current year.
 copyright:
-  start_year: 2016
+  start_year: 2021
   end_year:
 
 ##############################################################################
@@ -143,8 +146,23 @@ mathjax:
   
 # Fill in your Disqus Comments Shortname to enable Disqus comments.
 disqus:
-  enabled: false
+  enabled: false # 确定 disqus 评论是关闭的
   shortname: cactus-1
+
+gitalk:
+  enabled: false # 开关开启
+  owner: alileew # 你的 github 用户名
+  repo: alileew_comments # 你的 github 存放评论的仓库名
+  admin: alileew # 管理员，你的 github 用户名
+  clientID: c5dcbc9fa6346a5c96f9
+  clientSecret: 38b9ec542be8a38665183420a460cd985e0cd635
+
+valine:
+  enabled: true
+  appId: 5Ah2dYXOOS7ryWdhr9z0BP9h-gzGzoHsz
+  appKey: JxuAq1gr9Q2b54FVIAj0bIcp
+  avatar: retro #评论列表头像
+  placeholder: 如果读完文章对你有所感悟，请留下你的宝贵想法 ~ #评论框占位符
 
 # Fill in your Utterances data to enable Utterances comments
 utterances:
@@ -154,15 +172,20 @@ utterances:
   label: Comment
   theme: github-dark
 
+busuanzi:
+  enabled: true
+
 # Fill in your Google Analytics tracking ID to enable Google Analytics.
 google_analytics:
   enabled: false
-  id: UA-86660611-1
+  id: G-FH65Y1X567
 
 # Fill in your Baidu Analytics tracking ID to enable Baidu Analytics.
+# TODO: 本地开发时，enabled 置为false
 baidu_analytics:
+  # enabled: true
   enabled: false
-  id: 2e6da3c375c8a87f5b664cea6d4cb29c
+  id: bec71a2f6ab95d027a99b5e95b8faedc
 
 # Fill in your Cloudflare Analytics tracking ID to enable Cloudflare Analytics.
 cloudflare_analytics:
@@ -181,6 +204,11 @@ umami_analytics:
 gravatar:
   email: name@email.com
   hash: d41d8cd98f00b204e9800998ecf8427e
+
+# abbrlink config
+abbrlink:
+  alg: crc32  # 算法：crc16(default) and crc32
+  rep: hex    # 进制：dec(default) and hex
 
 # loads libraries and styles from CDN instead or relying on local files
 cdn:

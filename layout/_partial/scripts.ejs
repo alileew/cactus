@@ -90,6 +90,10 @@
         gtag('config', '<%= theme.google_analytics.id %>');
     </script>
 <% } %>
+<!-- busuanzi -->
+<% if (theme.busuanzi.enabled){ %>  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<% } %>
 <!-- Baidu Analytics -->
 <% if (theme.baidu_analytics.enabled && theme.baidu_analytics.id){ %>
   <script type="text/javascript">
@@ -146,3 +150,20 @@
       }());
   </script>
 <% } %>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+<script type="text/javascript">
+  var typed = new Typed('#faith', {
+    strings: ["坚持, 有常, 是成事的第一要素. 日日行, 不怕千万里. 常常做, 不怕千万事."],
+    typeSpeed: 100,
+    cursorChar: '',
+  });
+</script>
+<script type="text/javascript">
+  var typed = new Typed('#text-slider', {
+    strings: ["你似乎来到了没有知识存在的荒原"],
+    typeSpeed: 100, // 打字速度
+    backSpeed: 50, // 回退速度(多个数组的时候，才生效)
+    cursorChar: '|',
+  });
+</script>

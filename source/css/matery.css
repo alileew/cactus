@@ -1,0 +1,103 @@
+.LightMode {
+  background-color: #fff;
+  color: #383838;
+}
+
+.LightMode #sma {
+  background: #000;
+  color: #fff;
+}
+.LightMode #header h1 {
+  color: #383838;
+}
+.LightMode #header .h1 {
+  color: #383838;
+}
+.LightMode .content h2,
+.content .h2 {
+  color: #383838;
+}
+.LightMode .content a {
+  color: #666;
+}
+.LightMode article {
+  color: #383838;
+}
+.LightMode article header .meta * {
+  color: #8c8c8c;
+}
+.LightMode article {
+  color: #383838;
+}
+.LightMode .content blockquote {
+  color: #2bbc8a;
+}
+.LightMode #header-post a {
+  color: #666;
+}
+
+.LightMode .content blockquote:before {
+  color: #2bbc8a;
+}
+.LightMode .article-highlight {
+  color: #2bbc8a;
+}
+.LightMode article a {
+  color: #383838;
+  background-image: linear-gradient(
+    transparent,
+    transparent 5px,
+    rgb(56, 56, 56) 5px,
+    rgb(56, 56, 56)
+  );
+}
+.LightMode .post-list .post-item .meta,
+#footer,
+a {
+  color: #666;
+}
+#vcomments .vcards .vcontent p {
+  color: #b3b3b3;
+}
+
+.LightMode #vcomments .vcards .vcontent p {
+  color: #555;
+}
+
+/* 深色模式按钮设置 */
+#sma {
+  background: #fff;
+  color: #000;
+  box-shadow: 0px 0px 5px 2px;
+  width: 38px;
+  height: 38px;
+  display: block;
+  position: fixed;
+  border-radius: 50%;
+  right: 30px;
+  bottom: 70px;
+  padding-top: 15px;
+  margin-bottom: 0;
+  z-index: 998;
+  cursor: pointer;
+}
+
+#sma .fa-moon-o {
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+  font-size: 1.48rem !important;
+}
+#sma .fa-lightbulb-o {
+  position: absolute;
+  right: 11px;
+  bottom: 8px;
+  font-size: 1.5rem !important;
+}
+
+.fa-moon-o:before {
+  content: "\f186";
+}
+.fa-lightbulb-o:before {
+  content: "\f0eb";
+}
